@@ -13,9 +13,9 @@ import telegram
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, ConversationHandler, CallbackContext
 
 
-
+load_dotenv()
 # Telegram Bot Token
-TOKEN = '6695353360:AAHpt8DNtKQHwede7hCAdeCYWCkCw7eS7pw'
+TOKEN = os.getenv('Telegram')
 
 # Telegram API setup
 updater = Updater(token=TOKEN, use_context=True)
@@ -24,8 +24,8 @@ dispatcher = updater.dispatcher
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
 # Your existing code
-load_dotenv()
-openai.organization = "org-7kMbASbGlSELQfQ8Fqgd9rxH"
+
+openai.organization = os.getenv('organization')
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
 model_name = 'gpt2'
