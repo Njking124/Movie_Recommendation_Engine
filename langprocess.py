@@ -2,9 +2,11 @@ import cohere
 import numpy as np
 import re
 from cohere.responses.classify import Example
+from dotenv import load_dotenv
+import os
 
-
-co = cohere.Client("n23QdXPHsj0etlcubDrmRYO5uWFjDr6OiXEQN9UH")
+load_env()
+co = os.getenv('cohere')
 
 # examples to train genre classifier
 
